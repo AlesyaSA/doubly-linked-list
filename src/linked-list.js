@@ -89,22 +89,26 @@ return this;
 
 }
     reverse() {//reserve the list
+/*let hp=this._head.prev;
+let hn=this._head.next;
 let p=this._head;
-  p=p.next;
-for(let i=1;i<this.length-1;i++){
+//  p=p.next;
+for(let i=0;i<this.length;i++){
 
-  let a = p.prev;
-  p.prev=p.next;
-  p.next=a;
+  let a = hp;
+  hp=hn;
+  hn=a;
   p=p.next;
 
 }
+*/
+let hd=this._head.data;
+let td=this._tail.data;
+
 let h=this._head;
 let t=this._tail;
-h=h.next;
-t=t.prev;
 
-for (let i=1;i<(Math.round(this.length/2));i++){
+for (let i=0;i<(Math.floor(this.length/2));i++){
 
   let a=h.data;
   h.data=t.data;
@@ -114,7 +118,14 @@ for (let i=1;i<(Math.round(this.length/2));i++){
   t=t.prev;
 
 }
-}
+
+
+
+/*
+let a=this._head.next;
+this._head.next=this._tail.prev;
+this._tail.prev=a;
+*/}
 
     indexOf(data) {//returns index of element if data is found
                  //returns -1 if data ian't found
