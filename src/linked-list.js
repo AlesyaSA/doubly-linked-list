@@ -3,19 +3,24 @@ const Node = require('./node');
 class LinkedList {
     constructor() {
       this.length = 0;
+    //  return this;
     }
     append(data) {//assign any nodes to this._head and this._tail if list is ampty
                   //adds new data in the end of the list
 if(this.length==0){
 this._head = new Node;
-this._tail = new Node;
+this._head.data=data;
+this._tail = this._head;
+
 }
+else {
+  this._tail.next = new Node(data,this._tail);
+  this._tail=this._tail.next;
+
+}
+
 this.length++;
-//this.tail=this.head;
-//this.head=data;
-
-//this._tail=this.data;
-
+return this;
 }
 
 
@@ -23,11 +28,11 @@ this.length++;
 
 
     head() {//returns data from this.head
-return this.head;
+return this._head.data;
 }
     tail() {//returns data from this.tail
 
-return this.tail;
+return this._tail.data;
 }
     at(index) {//returns Node.data by index
 }
