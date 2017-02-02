@@ -42,10 +42,21 @@ let p=this._head;
       return p.data;
 }
     insertAt(index, data) {//inserts data by index
-      
+      let p=this._head;
+            for(let i=0;i<index;i++){
+              p=p.next;
+            }
+            p.data=data;
+            return p.data;
 
 }
     isEmpty() {//returns true if list is empty
+      if(this.length==0){
+        return true;
+      }
+      else{
+      return false;
+    }
 }
     clear() {//clear the list
 }
