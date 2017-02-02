@@ -35,8 +35,15 @@ return this._head.data;
 return this._tail.data;
 }
     at(index) {//returns Node.data by index
+let p=this._head;
+      for(let i=0;i<index;i++){
+        p=p.next;
+      }
+      return p.data;
 }
     insertAt(index, data) {//inserts data by index
+      
+
 }
     isEmpty() {//returns true if list is empty
 }
@@ -47,7 +54,9 @@ return this._tail.data;
     reverse() {//reserve the list
 }
     indexOf(data) {//returns index of element if data is found
-}                  //returns -1 if data ian't found
+                 //returns -1 if data ian't found
 
+
+}
 }
 module.exports = LinkedList;
