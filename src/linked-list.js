@@ -68,12 +68,22 @@ let p=this._head;
 
 }
     deleteAt(index) {//deletes element by index
-     let p=this.at(index);
-          if(p.next != null){
-            p.prev.next=p.next;
-            p.next.prev=p.prev;
-            p.next=null;
-            p.prev=null;
+
+     let p=this._head;
+           for(let i=0;i<index;i++){
+
+             p=p.next;
+
+         }
+         let a=p;
+
+
+
+          if(a.next != null){
+            a.prev.next=a.next;
+            a.next.prev=a.prev;
+            a.next=null;
+            a.prev=null;
           }
 return this;
 
