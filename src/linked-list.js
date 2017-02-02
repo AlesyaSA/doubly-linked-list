@@ -89,20 +89,51 @@ return this;
 
 }
     reverse() {//reserve the list
+let p=this._head;
+  p=p.next;
+for(let i=1;i<this.length-1;i++){
+
+  let a = p.prev;
+  p.prev=p.next;
+  p.next=a;
+  p=p.next;
 
 }
+let h=this._head;
+let t=this._tail;
+h=h.next;
+t=t.prev;
+
+for (let i=1;i<(Math.round(this.length/2));i++){
+
+  let a=h.data;
+  h.data=t.data;
+  t.data=a;
+
+  h=h.next;
+  t=t.prev;
+
+}
+}
+
     indexOf(data) {//returns index of element if data is found
                  //returns -1 if data ian't found
-let p=this._head;let a=0;
-for(let i=0;i<this.lenth;i++){
-  p=p.next;
-  if(p.data==data) {return p.data;a++;}
-}
-if(a==0){
-  return -1;
+
+         let p=this._head;
+
+           for(let i=0;i<this.length;i++){
+
+                 if (p.data==data){return i;}
+
+             p=p.next;
+
+             }
+return -1;
+
 }
 
 
-}
+
+
 }
 module.exports = LinkedList;
