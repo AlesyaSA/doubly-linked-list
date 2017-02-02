@@ -68,18 +68,29 @@ let p=this._head;
 
 }
     deleteAt(index) {//deletes element by index
-      let p=this._head;
-            for(let i=0;i<index;i++){
-              p=p.next;
-            }
-            p.data=null;
-            return p.data;
+     let p=this.at(index);
+          if(p.next != null){
+            p.prev.next=p.next;
+            p.next.prev=p.prev;
+            p.next=null;
+            p.prev=null;
+          }
+return this;
 
 }
     reverse() {//reserve the list
+
 }
     indexOf(data) {//returns index of element if data is found
                  //returns -1 if data ian't found
+let p=this._head;let a=0;
+for(let i=0;i<this.lenth;i++){
+  p=p.next;
+  if(p.data==data) {return p.data;a++;}
+}
+if(a==0){
+  return -1;
+}
 
 
 }
