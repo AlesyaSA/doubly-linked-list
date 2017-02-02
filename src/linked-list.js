@@ -37,8 +37,10 @@ return this._tail.data;
     at(index) {//returns Node.data by index
 let p=this._head;
       for(let i=0;i<index;i++){
+
         p=p.next;
-      }
+
+    }
       return p.data;
 }
     insertAt(index, data) {//inserts data by index
@@ -59,8 +61,20 @@ let p=this._head;
     }
 }
     clear() {//clear the list
+      this._head.data=null;
+      this._tail.data=null;
+      this.length=0;
+
+
 }
     deleteAt(index) {//deletes element by index
+      let p=this._head;
+            for(let i=0;i<index;i++){
+              p=p.next;
+            }
+            p.data=null;
+            return p.data;
+
 }
     reverse() {//reserve the list
 }
