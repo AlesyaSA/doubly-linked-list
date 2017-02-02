@@ -11,21 +11,15 @@ if(this.length==0){
 this._head = new Node;
 this._head.data=data;
 this._tail = this._head;
-
 }
 else {
   this._tail.next = new Node(data,this._tail);
   this._tail=this._tail.next;
-
 }
 
 this.length++;
 return this;
 }
-
-
-
-
 
     head() {//returns data from this.head
 return this._head.data;
@@ -77,8 +71,6 @@ return this;
          }
          let a=p;
 
-
-
           if(a.next != null){
             a.prev.next=a.next;
             a.next.prev=a.prev;
@@ -122,9 +114,6 @@ return this;
 return -1;
 
 }
-
-
-
 
 }
 module.exports = LinkedList;
